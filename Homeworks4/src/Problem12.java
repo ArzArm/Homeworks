@@ -12,13 +12,13 @@ public class Problem12 {
         while (i <= n) {
             int j = 1;
             while (j <= n) {
-                if (j % 2 == 0) {
-                    System.out.print(" - " + white);
-                } else {
-                    if (j != 1) {
-                        System.out.print(" - ");
-                    }
+                if (j != 1) {
+                    System.out.print(" - ");
+                }
+                if (i % 2 != 0 && j % 2 != 0 || i % 2 == 0 && j % 2 == 0) {
                     System.out.print(black);
+                } else {
+                    System.out.print(white);
                 }
                 j++;
             }
@@ -27,3 +27,4 @@ public class Problem12 {
         }
     }
 }
+
