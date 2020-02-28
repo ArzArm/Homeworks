@@ -1,9 +1,9 @@
 public class Problem1 {
     public static void main(String[] args) {
-        int[] arr = new int[]{25986, 25698, -896325, 1259870, 2222, 1, 2, 0};
+        int[] arr = new int[]{-12, 1, 0, 12598, 45, 3, 41, 2, 67, 6};
         int i, j;
 
-        int[] newArr = new int[arr.length];
+        int[] newArr = new int[arr.length + 1];
         for (i = 0; i < arr.length; i++) {
             if (arr[i] > 0) {
                 if (arr[i] <= arr.length) {
