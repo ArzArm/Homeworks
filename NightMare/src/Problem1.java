@@ -1,12 +1,12 @@
 public class Problem1 {
     public static void main(String[] args) {
-        int[] arr = new int[]{0, 1, 2, 3, 4};
+        int[] arr = new int[]{0, 5,1, 2, 3, -2, 0, 7};
         int i;
-        int j;
         int result;
         int min = 0;
+        boolean check = true;
 
-        for (j = 0; j < arr.length; j++) {
+        while (check){
             boolean isValueExist = false;
             min = min + 1;
             for (i = 0; i < arr.length; i++) {
@@ -18,7 +18,7 @@ public class Problem1 {
             if (!isValueExist) {
                 result = min;
                 System.out.println(result);
-                break;
+                check = false;
             }
         }
     }
