@@ -1,18 +1,16 @@
 public class Problem1 {
     public static void main(String[] args) {
-        int[] arr = new int[]{0, 110, 1, -2, 0, -2, 0, 3, 10, 1256, 0, 2};
-
+        int[] arr = new int[]{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -11, 1002, 13, 1154, -15, 0, 17, 21, 18, 19, 20, 22, 24};
         int i, j;
-        int max = 1;
-        for (i = 0; i < arr.length; i++) {
-            if (arr[i] > max) {
-                max = arr[i];
-            }
-        }
-        int[] newArr = new int[max];
+
+        int[] newArr = new int[arr.length * 2];
         for (i = 0; i < arr.length; i++) {
             if (arr[i] > 0) {
-                newArr[arr[i] - 1] = arr[i];
+                if (arr[i] <= arr.length) {
+                    newArr[arr[i] - 1] = arr[i];
+                } else {
+                    newArr[arr.length + i] = arr[i];
+                }
             }
         }
         for (j = 0; j < newArr.length; j++) {
@@ -22,10 +20,7 @@ public class Problem1 {
                 break;
             }
         }
-
-
     }
-
 }
 
 
