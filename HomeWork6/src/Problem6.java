@@ -4,26 +4,35 @@ public class Problem6 {
     public static void main(String[] args) {
         System.out.println("Input parenthesis sequence : ");
         Scanner scanner = new Scanner(System.in);
-        String parenthesisSequence = scanner.nextLine();
-        int leftCounter = 0;
-        int rightCounter = 0;
-        int k, j;
-        j = 0;
-        k = 0;
+        String sequence = scanner.next();
+        int counter = 0;
+        boolean aa = true;
 
-        for (int i = 0; i < parenthesisSequence.length(); i++) {
-            if (parenthesisSequence.charAt(i) == '(') {
-                leftCounter++;
-                k += i;
-            } else if (parenthesisSequence.charAt(i) == ')') {
-                rightCounter++;
-                j += i;
-            }
-        }
-        if (leftCounter == rightCounter && k < j) {
-            System.out.println("Valid");
-        } else {
+        if (sequence.charAt(0) == ')' || sequence.charAt(sequence.length() - 1) == '(') {
             System.out.println("Invalid");
+        } else {
+            for (int i = 0; i < sequence.length(); i++) {
+                if (sequence.charAt(i) == '(') {
+                    counter++;
+                } else {
+                    counter--;
+                }
+                if (counter == 0 && i != sequence.length()-1) {
+                    if (sequence.charAt(i + 1) == ')') {
+                        System.out.println("Invalid");
+                        aa = false;
+                        break;
+                    }
+                }
+            }
+            while (aa) {
+                if (counter != 0) {
+                    System.out.println("Invalid");
+                } else {
+                    System.out.println("Valid");
+                    break;
+                }
+        }
         }
     }
 }
