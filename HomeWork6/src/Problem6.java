@@ -6,7 +6,7 @@ public class Problem6 {
         Scanner scanner = new Scanner(System.in);
         String sequence = scanner.next();
         int counter = 0;
-        boolean aa = true;
+        boolean isLoopCompleted = true;
 
         if (sequence.charAt(0) == ')' || sequence.charAt(sequence.length() - 1) == '(') {
             System.out.println("Invalid");
@@ -20,12 +20,12 @@ public class Problem6 {
                 if (counter == 0 && i != sequence.length()-1) {
                     if (sequence.charAt(i + 1) == ')') {
                         System.out.println("Invalid");
-                        aa = false;
+                        isLoopCompleted  = false;
                         break;
                     }
                 }
             }
-            while (aa) {
+            while (isLoopCompleted ) {
                 if (counter != 0) {
                     System.out.println("Invalid");
                 } else {
