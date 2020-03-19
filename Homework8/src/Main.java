@@ -11,24 +11,6 @@ public class Main {
         Person B2 = new Person("Tigran", 96.2);
         Person B3 = new Person("Elen", 44);
 
-//        A1.name = "Armen";
-//        A2.name = "Suren";
-//        A3.name = "Lilit";
-//        B1.name = "Anna";
-//        B2.name = "Tigran";
-//        B3.name = "Elen";
-//
-//        A1.balance = 35.6;
-//        A2.balance = 45;
-//        A3.balance = 78;
-//        B1.balance = 77;
-//        B2.balance = 96.2;
-//        B3.balance = 44;
-
-        //A.setNameCompany("'Nuclear Power Plant'");
-        //B.setNameCompany("'Renewable Energy'");
-
-
         A1.company = A;
         A2.company = A;
         A3.company = A;
