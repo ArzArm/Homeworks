@@ -5,8 +5,7 @@ public class User {
     private String username;
     private String password;
     private ArrayList<Message> messages;
-    private ArrayList<Announcement> announcementsSeen;
-    protected ArrayList<Announcement> announcements;
+    protected  ArrayList<Announcement> announcementsSeen;
     boolean announcementSeen = false;
 
     public User(String username, String password) {
@@ -14,24 +13,23 @@ public class User {
         this.password = password;
         messages = new ArrayList<>();
         announcementsSeen = new ArrayList<>();
-        announcements = new ArrayList<>();
     }
 
-    public ArrayList<Announcement> getAnnouncements() {
-        return announcements;
-    }
-
-    public void setAnnouncements(ArrayList<Announcement> announcements) {
-        this.announcements = announcements;
-    }
-
-    public ArrayList<Announcement> getAnnouncementsSeen() {
-        return announcementsSeen;
-    }
-
-    public void setAnnouncementsSeen(ArrayList<Announcement> announcementsSeen) {
-        this.announcementsSeen = announcementsSeen;
-    }
+//    public ArrayList<Announcement> getAnnouncements() {
+//        return announcements;
+//    }
+//
+//    public void setAnnouncements(ArrayList<Announcement> announcements) {
+//        this.announcements = announcements;
+//    }
+//
+//    public ArrayList<Announcement> getAnnouncementsSeen() {
+//        return announcementsSeen;
+//    }
+//
+//    public void setAnnouncementsSeen(ArrayList<Announcement> announcementsSeen) {
+//        this.announcementsSeen = announcementsSeen;
+//    }
 
     public String getUsername() {
         return username;

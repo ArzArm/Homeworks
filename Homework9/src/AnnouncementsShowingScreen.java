@@ -1,12 +1,12 @@
 public class AnnouncementsShowingScreen extends Screen {
 
     public void process (){
-        if (administrator.getAnnouncements().size() == 0) {
+        if (announcements.size() == 0) {
             System.out.println("No any announcement");
         } else {
             System.out.println("All announcements:");
-            for (Announcement announcement : administrator.getAnnouncements()) {
-                System.out.println((administrator.getAnnouncements().indexOf(announcement) + 1) + ". " + announcement.getAnnouncement());
+            for (Announcement announcement : announcements) {
+                System.out.println((announcements.indexOf(announcement) + 1) + ". " + announcement.getAnnouncement());
             }
         }
         System.out.println("Back:  [1]");
@@ -21,6 +21,5 @@ public class AnnouncementsShowingScreen extends Screen {
         } else {
             System.out.println("Wrong input");
         }
-
     }
 }

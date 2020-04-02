@@ -13,16 +13,16 @@ public class AnnouncementsEditingScreen extends Screen {
                for (User user : userRepository.getAll()) {
                     user.announcementSeen = false;
                 }
-                administrator.getAnnouncements().add(announcement1);
+                announcements.add(announcement1);
                 System.out.println("Announcement published!");
             } else if (i == 2) {
                 System.out.println("Input announcement's number which you want to delete");
                 int announcementNumber = getIntegerFromUser();
-                if (administrator.getAnnouncements().size() < announcementNumber) {
+                if (announcements.size() < announcementNumber) {
                     System.out.println("Wrong number!!!");
                     break;
                 } else {
-                    administrator.announcements.remove((announcementNumber - 1));
+                    announcements.remove((announcementNumber - 1));
                     System.out.println("Announcement is deleted");
                 }
             } else if (i == 3) {

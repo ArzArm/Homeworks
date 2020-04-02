@@ -10,17 +10,17 @@ public class UserHomeScreen extends Screen {
                 System.out.println("Announcements:  [1]");
                 System.out.println("Edit announcements:  [4]");
                 System.out.println("Log Out:  [2]");
-            } else if (!loggedInUser.announcementSeen && administrator.getAnnouncements().size() != 0) {
+            } else if (!loggedInUser.announcementSeen && announcements.size() != 0) {
                 System.out.println("You have new announcement!");
-                for (Announcement announcement : administrator.getAnnouncements()) {
-                    if (!loggedInUser.getAnnouncementsSeen().contains(announcement)) {
-                        System.out.println((administrator.getAnnouncements().indexOf(announcement) + 1) + ". " + announcement.getAnnouncement());
-                        loggedInUser.getAnnouncementsSeen().add(announcement);
+                for (Announcement announcement : announcements) {
+                    if (!loggedInUser.announcementsSeen.contains(announcement)) {
+                        System.out.println((announcements.indexOf(announcement) + 1) + ". " + announcement.getAnnouncement());
+                        loggedInUser.announcementsSeen.add(announcement);
                         loggedInUser.announcementSeen = true;
                     }
                 }
-            } else if (loggedInUser.announcementSeen || administrator.getAnnouncements().size() == 0) {
-                System.out.println("No new announcement!");
+            } else if (loggedInUser.announcementSeen || announcements.size() == 0) {
+                System.out.println("No new announcement");
             }
             int i = getIntegerFromUser();
             if (i == 3) {
@@ -40,7 +40,7 @@ public class UserHomeScreen extends Screen {
                 AnnouncementsShowingScreen announcementsShowingScreen = new AnnouncementsShowingScreen();
                 announcementsShowingScreen.process();
             } else {
-                System.out.println("Wrong input!!!");
+                System.out.println("Wrong input");
             }
         }
     }
