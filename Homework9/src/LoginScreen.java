@@ -1,5 +1,6 @@
 public class LoginScreen extends Screen {
     public void process() {
+
         while (true) {
             System.out.println("Input username");
             String username = getStringFromUser();

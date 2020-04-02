@@ -15,22 +15,6 @@ public class User {
         announcementsSeen = new ArrayList<>();
     }
 
-//    public ArrayList<Announcement> getAnnouncements() {
-//        return announcements;
-//    }
-//
-//    public void setAnnouncements(ArrayList<Announcement> announcements) {
-//        this.announcements = announcements;
-//    }
-//
-//    public ArrayList<Announcement> getAnnouncementsSeen() {
-//        return announcementsSeen;
-//    }
-//
-//    public void setAnnouncementsSeen(ArrayList<Announcement> announcementsSeen) {
-//        this.announcementsSeen = announcementsSeen;
-//    }
-
     public String getUsername() {
         return username;
     }

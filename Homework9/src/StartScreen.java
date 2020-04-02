@@ -4,7 +4,6 @@ public class StartScreen extends Screen {
     public void process() {
 
         while (true) {
-            userRepository.save(administrator);
             System.out.println("1. Login");
             System.out.println("2. Register");
              int i = getIntegerFromUser();
