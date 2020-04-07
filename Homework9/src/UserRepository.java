@@ -28,7 +28,6 @@ public class UserRepository {
         }
         return null;
     }
-
     public User getByUsernamePassword(String username, String password) {
         for (User user : users) {
             if (user.getUsername().equals(username) && user.getPassword().equals(password)) {
@@ -37,7 +36,6 @@ public class UserRepository {
         }
         return null;
     }
-
     public ArrayList<User> getAll() {
         return users;
     }

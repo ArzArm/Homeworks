@@ -4,15 +4,21 @@ import java.util.ArrayList;
 public class User {
     private String username;
     private String password;
-    private ArrayList<Message> messages;
+
     protected  ArrayList<Announcement> announcementsSeen;
+    protected ArrayList<Message> newMessage;
     boolean announcementSeen = false;
+    boolean haveNewMessage = false;
+    protected ArrayList<User> requests;
+    protected ArrayList<User> friends;
 
     public User(String username, String password) {
         this.username = username;
         this.password = password;
-        messages = new ArrayList<>();
         announcementsSeen = new ArrayList<>();
+        newMessage = new ArrayList<>();
+        friends = new ArrayList<>();
+        requests = new ArrayList<>();
     }
 
     public String getUsername() {
@@ -31,11 +37,4 @@ public class User {
         this.password = password;
     }
 
-    public ArrayList<Message> getMessages() {
-        return messages;
-    }
-
-    public void setMessages(ArrayList<Message> messages) {
-        this.messages = messages;
-    }
 }

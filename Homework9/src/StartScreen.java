@@ -1,25 +1,20 @@
 public class StartScreen extends Screen {
 
     @Override
-    public void process() {
+    public Screen process() {
+        System.out.println("Login: [1]");
+        System.out.println("Register: [2]");
+        int i = getIntegerFromUser();
+        if (i == 1) {
+            return new LoginScreen();
 
-        while (true) {
-            System.out.println("1. Login");
-            System.out.println("2. Register");
-             int i = getIntegerFromUser();
-            if (i == 1) {
-                LoginScreen loginScreen = new LoginScreen();
-                loginScreen.process();
-                break;
-            } else if (i == 2) {
-                RegistrationScreen registrationScreen = new RegistrationScreen();
-                registrationScreen.process();
-                break;
-            } else {
-                System.out.println("Wrong input");
-            }
+        } else if (i == 2) {
+            return new RegistrationScreen();
+        } else {
+            System.out.println("Wrong input!");
+
         }
-
+        return new StartScreen();
 
     }
 }
