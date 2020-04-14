@@ -4,13 +4,12 @@ public class LoginScreen extends Screen {
         String username = getStringFromUser();
         System.out.println("Input password!");
         String password = getStringFromUser();
-        User user = userRepository.getByUsernamePassword(username, password);
-        if (user == null) {
+        RegularUser user = userRepository.getByUsernamePassword(username, password);
+        if (user == null && !username.equals("admin")) {
             System.out.println("Wrong username password!");
             return new StartScreen();
-        } else if (user == administrator) {
+        } else if (username.equals( admin.getUsername()) && password.equals(admin.getPassword())) {
             System.out.println("Login successful!");
-            loggedInUser = administrator;
             return new AdminHomeScreen();
         } else {
             System.out.println("Login successful!");

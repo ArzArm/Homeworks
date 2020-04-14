@@ -1,22 +1,25 @@
-public class PersonalMessageScreen extends Screen {
-    private User to;
+import java.util.ArrayList;
 
-    public PersonalMessageScreen(User to) {
+public class PersonalMessageScreen extends Screen {
+    private RegularUser to;
+
+    public PersonalMessageScreen(RegularUser to) {
         this.to = to;
     }
     @Override
     public Screen process() {
         System.out.println("Your messages from " + to.getUsername() + "!");
-        for (Message message : messages) {
-            if (message.getFrom().getUsername().equals(to.getUsername())) {
+        ArrayList<Message> allReceiveMessageFrom = messageRepository.getFrom(to);
+
+        for (Message message : allReceiveMessageFrom) {
+
                 System.out.println(message.getMessage());
-            }
+
         }
         System.out.println("Write message!");
         String message = getStringFromUser();
         Message message1 = new Message(message, loggedInUser, to);
-        messages.add(message1);
-        to.newMessage.add(message1);
+       messageRepository.save(message1);
         System.out.println("Message was sent!");
         return new UserHomeScreen();
     }

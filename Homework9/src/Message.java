@@ -1,12 +1,21 @@
 public class Message {
     private String message;
-    private User from;
-    private User to;
+    private RegularUser from;
+    private RegularUser to;
+    protected int sequentialNumber;
 
-    public Message(String message, User from, User to) {
+
+    public Message(String message, RegularUser from, RegularUser to) {
         this.message = message;
         this.from = from;
         this.to = to;
+        sequentialNumber = -1;
+    }
+
+    public Message(RegularUser from, RegularUser to) {
+        this.from = from;
+        this.to = to;
+
     }
 
     public String getMessage() {
@@ -17,19 +26,19 @@ public class Message {
         this.message = message;
     }
 
-    public User getFrom() {
+    public RegularUser getFrom() {
         return from;
     }
 
-    public void setFrom(User from) {
+    public void setFrom(RegularUser from) {
         this.from = from;
     }
 
-    public User getTo() {
+    public RegularUser getTo() {
         return to;
     }
 
-    public void setTo(User to) {
+    public void setTo(RegularUser to) {
         this.to = to;
     }
 }

@@ -1,35 +1,31 @@
+import java.util.ArrayList;
+
 public class UserMessagesScreen extends Screen {
     @Override
     public Screen process() {
         System.out.println("Wright message: [1] ");
         System.out.println("Back:  [2]");
         System.out.println("All friends");
-        for (User friend : loggedInUser.friends) {
-            System.out.println(loggedInUser.friends.indexOf(friend) + 1 + ". " + friend.getUsername());
+        ArrayList<RegularUser> allFriends = loggedInUser.friends.getAll();
+        for (RegularUser friend : allFriends) {
+            System.out.println(friend.getUsername());
         }
 
         System.out.print("Inbox: ");
-        boolean isInboxEmpty = true;
-        for (Message message : messages) {
-            if (message.getTo() == loggedInUser) {
-                System.out.println("\n" + "From " + message.getFrom().getUsername() + " " + "[" + message.getMessage() + "]");
-                isInboxEmpty = false;
-                loggedInUser.newMessage.clear();
+        ArrayList<Message> allReceiveMessages = messageRepository.getTo(loggedInUser);
+        for (Message message : allReceiveMessages) {
+            System.out.println("\n" + "From " + message.getFrom().getUsername() + " " + "[" + message.getMessage() + "]");
 
-            }
         }
-        if (isInboxEmpty) {
+        if (allReceiveMessages.size() == 0) {
             System.out.println("Empty!");
         }
         System.out.print("Sent: ");
-        boolean isSentboxEmpty = true;
-        for (Message message : messages) {
-            if (message.getFrom() == loggedInUser) {
-                System.out.println("\n" + "To  " + message.getTo().getUsername() + " " + "[" + message.getMessage() + "]");
-                isSentboxEmpty = false;
-            }
+        ArrayList<Message> allSentMessages = messageRepository.getFrom(loggedInUser);
+        for (Message message : allSentMessages) {
+            System.out.println("\n" + "To  " + message.getTo().getUsername() + " " + "[" + message.getMessage() + "]");
         }
-        if (isSentboxEmpty) {
+        if (allSentMessages.size() == 0) {
             System.out.println("Empty!");
         }
         int i = getIntegerFromUser();
@@ -38,8 +34,8 @@ public class UserMessagesScreen extends Screen {
         } else if (i == 1) {
             System.out.println("Input friend's username!");
             String someUsername = getStringFromUser();
-            User target = userRepository.getByUsername(someUsername);
-            if (target != null && loggedInUser.friends.contains(target)) {
+            RegularUser target = userRepository.getByUsername(someUsername);
+            if (target != null && allFriends.contains(target)) {
                 return new PersonalMessageScreen(target);
             } else {
                 System.out.println("No friend with this username!");
