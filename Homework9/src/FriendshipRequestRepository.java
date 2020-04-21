@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class FriendshipRequestRepository {
+public class FriendshipRequestRepository implements Repository<FriendshipRequest> {
     ArrayList<FriendshipRequest> friendshipRequests;
 
     FriendshipRequestRepository() {

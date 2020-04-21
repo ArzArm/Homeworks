@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class UserRepository {
+public class UserRepository implements Repository<RegularUser>{
     private ArrayList<RegularUser> users;
 
     public UserRepository() {

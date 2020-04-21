@@ -1,16 +1,15 @@
 import java.util.ArrayList;
 
-public class MassageRepository {
+public class MassageRepository implements Repository<Message>{
     private ArrayList<Message> messages;
 
     MassageRepository(){
         messages = new ArrayList<>();
     }
     public ArrayList<Message> getAll(){
-
         return messages;
     }
-    void save(Message message){
+    public void save(Message message){
         messages.add(message);
 
     }

@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class AnnouncementRepository {
+public class AnnouncementRepository implements Repository<Announcement> {
     private int lastSequentialNumber;
     private ArrayList<Announcement> announcements;
 
@@ -13,7 +13,7 @@ public class AnnouncementRepository {
         return announcements;
     }
 
-    void save(Announcement announcement) {
+    public void save(Announcement announcement) {
         lastSequentialNumber++;
         announcement.setSequentialNumber(lastSequentialNumber);
         announcements.add(announcement);

@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class FriendRepository {
+public class FriendRepository implements Repository<RegularUser> {
     ArrayList<RegularUser> friends;
 
     FriendRepository() {
@@ -11,7 +11,7 @@ public class FriendRepository {
         return friends;
     }
 
-    public  void  save(RegularUser friend) {
+    public void save(RegularUser friend) {
         friends.add(friend);
     }
 }
