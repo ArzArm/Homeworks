@@ -22,6 +22,7 @@ public class Person {
     }
 
     public void setBalance(double balance) {
+
         this.balance = balance;
     }
 

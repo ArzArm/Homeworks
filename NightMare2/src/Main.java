@@ -1,6 +1,6 @@
 public class Main {
     public static void main(String[] args) {
-        String digitString = "2143";
+        String digitString = "500222543";
         int i;
         char[] chars = digitString.toCharArray();
 

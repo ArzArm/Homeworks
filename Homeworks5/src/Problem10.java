@@ -1,7 +1,7 @@
 public class Problem10 {
     public static void main(String[] args) {
-        int[] arr = new int[]{45, 2, 4, 2, 45, 2, 0, 2, 0, 25, 1, 1, 1, 1, 25, 58, 45, 25, 0};
-        int k = 3;
+        int[] arr = new int[]{45, 2, 4, 2, 45,0};
+        int k = 5;
         int i;
 
         int newCounter = 0;
