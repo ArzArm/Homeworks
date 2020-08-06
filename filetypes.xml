@@ -1,8 +1,12 @@
 <application>
   <component name="FileTypeManager" version="17">
     <extensionMap>
+      <mapping pattern="Pom" type="MavenConfig" />
+      <mapping pattern="" type="MavenConfig" />
+      <mapping ext="xlm" type="MavenConfig" />
       <mapping pattern="NotWorkingGadjets.CSV" type="PLAIN_TEXT" />
       <mapping pattern="sevagir" type="PLAIN_TEXT" />
+      <mapping pattern="mvn" type="XML" />
     </extensionMap>
   </component>
 </application>
